@@ -29,7 +29,7 @@ df_count_by_genre = df.groupby('genre_name').agg(num_tracks = ('track_id', 'coun
 print(df_count_by_genre)
 
 fig, ax = plt.subplots()
-sns.barplot(data=df_count_by_genre.sort_values('num_tracks', ascending=False), y="genre_name", x="num_tracks")
+sns.barplot(data=df_count_by_genre.sort_values('num_tracks', ascending=False), y="genre_name", x="num_tracks", ax=ax)
 st.pyplot(fig)
 
 artist = st.selectbox('Select artist', df['artist_name'].unique())
